@@ -1,0 +1,4 @@
+Agent ID,Display Name,Platform,Owner Email,Risk Level,Assigned Scopes,Credential Age (Days),HITL Required,Audit Status,Reviewer Decision,Sign-Off Timestamp,Reviewer Notes
+AGT-001-FIN-RECON,Finance Reconciliation Autonomous Bot,Microsoft Entra ID,cfo-ops@company.internal,HIGH,FinancialRecords.Write.All | Directory.Read.All,185,False,PENDING_ATTESTATION,REVOKE,,
+AGT-002-IT-TRIAGE,Tier-1 Helpdesk Triage Copilot,Okta,it-service-desk@company.internal,LOW,tickets.read | tickets.comment,14,True,PENDING_ATTESTATION,CERTIFY,,
+AGT-003-DEV-DEPLOYER,CI/CD Auto-Remediation Cloud Agent,AWS IAM,unassigned-orphan@company.internal,HIGH,AdministratorAccess,420,False,PENDING_ATTESTATION,REVOKE,,

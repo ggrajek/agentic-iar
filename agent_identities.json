@@ -1,0 +1,59 @@
+[
+  {
+    "agent_id": "AGT-001-FIN-RECON",
+    "display_name": "Finance Reconciliation Autonomous Bot",
+    "owner_email": "cfo-ops@company.internal",
+    "platform": "Microsoft Entra ID",
+    "identity_type": "ServicePrincipal",
+    "assigned_scopes": [
+      "FinancialRecords.Write.All",
+      "Directory.Read.All"
+    ],
+    "credential_type": "ClientSecret",
+    "credential_age_days": 185,
+    "last_used_date": "2026-11-07",
+    "human_in_the_loop_required": false,
+    "autonomous_execution": true,
+    "risk_indicators": [
+      "Stale credential > 90 days",
+      "Unbounded write permissions to financial records without HITL approval"
+    ]
+  },
+  {
+    "agent_id": "AGT-002-IT-TRIAGE",
+    "display_name": "Tier-1 Helpdesk Triage Copilot",
+    "owner_email": "it-service-desk@company.internal",
+    "platform": "Okta",
+    "identity_type": "OAuthClientApp",
+    "assigned_scopes": [
+      "tickets.read",
+      "tickets.comment"
+    ],
+    "credential_type": "WorkloadIdentityFederation",
+    "credential_age_days": 14,
+    "last_used_date": "2026-11-08",
+    "human_in_the_loop_required": true,
+    "autonomous_execution": false,
+    "risk_indicators": []
+  },
+  {
+    "agent_id": "AGT-003-DEV-DEPLOYER",
+    "display_name": "CI/CD Auto-Remediation Cloud Agent",
+    "owner_email": "unassigned-orphan@company.internal",
+    "platform": "AWS IAM",
+    "identity_type": "IAMRole",
+    "assigned_scopes": [
+      "AdministratorAccess"
+    ],
+    "credential_type": "PersistentAccessKey",
+    "credential_age_days": 420,
+    "last_used_date": "2026-10-15",
+    "human_in_the_loop_required": false,
+    "autonomous_execution": true,
+    "risk_indicators": [
+      "Orphan account with unassigned human owner",
+      "Extreme standing privilege (AdministratorAccess)",
+      "Unrotated access key > 1 year"
+    ]
+  }
+]
